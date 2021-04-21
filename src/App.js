@@ -10,8 +10,9 @@ const app = props => {
             { name: 'Manu', age: '29' },
             { name: 'George', age: '26' }
         ],
-        otherState: 'some other value'
     });
+
+    // const [ otherState, setOtherState ] = useState('some other value');
 
     console.log(personsState);
 
@@ -32,9 +33,16 @@ const app = props => {
           <h1>Hi, I'm a react App</h1>
           <p>This is really working!</p>
           <button onClick={switchNameHandler}>Switch Name</button>
-          <Person name={personsState.persons[0].name} age={personsState.persons[0].age}  />
-          <Person name={personsState.persons[1].name} age={personsState.persons[1].age} />
-          <Person name={personsState.persons[2].name} age={personsState.persons[2].age}> My Hobbies: Racing</Person>
+          <Person
+              name={personsState.persons[0].name}
+              age={personsState.persons[0].age}  />
+          <Person
+              name={personsState.persons[1].name}
+              age={personsState.persons[1].age} />
+          <Person
+              name={personsState.persons[2].name}
+              age={personsState.persons[2].age}
+           click={switchNameHandler}>My Hobbies: Racing</Person>
       </div>
       );
       // return React.createElement('div', null, React.createElement('h1', {className: 'App'}, 'Does this work now?'))
