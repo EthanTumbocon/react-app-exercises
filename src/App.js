@@ -10,6 +10,7 @@ const app = props => {
             { name: 'Manu', age: '29' },
             { name: 'George', age: '26' }
         ],
+        showPersons: false;
     });
 
     // const [ otherState, setOtherState ] = useState('some other value');
@@ -37,6 +38,9 @@ const app = props => {
             ]
         } )
     }
+    const togglePersonsHandler = () =>{
+
+    }
 
 
     // render () {
@@ -55,7 +59,9 @@ const app = props => {
           <h1>Hi, I'm a react App</h1>
           <p>This is really working!</p>
           <button onClick={() => switchNameHandler('Maximillian!!')}>Switch Name</button>
-          <div>
+          {
+              this.state.showPersons ?
+              <div>
               <Person
                   name={personsState.persons[0].name}
                   age={personsState.persons[0].age}  />
@@ -67,8 +73,8 @@ const app = props => {
               <Person
                   name={personsState.persons[2].name}
                   age={personsState.persons[2].age}/>
-
-          </div>
+          </div> : null
+          }
       </div>
       );
       // return React.createElement('div', null, React.createElement('h1', {className: 'App'}, 'Does this work now?'))
