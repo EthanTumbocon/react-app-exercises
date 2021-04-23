@@ -21,9 +21,9 @@ const app = props => {
         // this.state.persons[0].name = "Maximillian"; DO NOT USE THIS
         setPersonsState({
             persons: [
-                { name: newName, age: '28' },
-                { name: 'Manu', age: '29' },
-                { name: 'Stephanie', age: '27' }
+                { name: 'Max', age: 28 },
+                { name: 'Manu', age: 29 },
+                { name: 'Stephanie', age: 26 }
             ]
         })
     }
@@ -63,7 +63,7 @@ const app = props => {
                   name={personsState.persons[1].name}
                   age={personsState.persons[1].age}
                   click={switchNameHandler.bind(this, 'Max!')}
-                  changed={nameChangedHandler}>My Hobbies: Racing</Person>
+                  changed={nameChangedHandler} >My Hobbies: Racing</Person>
               <Person
                   name={personsState.persons[2].name}
                   age={personsState.persons[2].age}/>
