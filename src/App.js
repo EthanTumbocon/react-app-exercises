@@ -8,12 +8,12 @@ const app = props => {
         persons: [
             { name: 'Max', age: '28' },
             { name: 'Manu', age: '29' },
-            { name: 'George', age: '26' }
+            { name: 'George', age: '26' },
         ],
-        showPersons: false;
+        otherState: 'some other value',
+        showPersons: false
     });
 
-    // const [ otherState, setOtherState ] = useState('some other value');
 
     console.log(personsState);
 
@@ -39,6 +39,8 @@ const app = props => {
         } )
     }
     const togglePersonsHandler = () =>{
+        const doesShow = this.state.showPersons;
+        this.setState({showPersons: !doesShow});
 
     }
 
@@ -58,9 +60,9 @@ const app = props => {
       <div className="App">
           <h1>Hi, I'm a react App</h1>
           <p>This is really working!</p>
-          <button onClick={() => switchNameHandler('Maximillian!!')}>Switch Name</button>
+          <button onClick={() => switchNameHandler.bind(this, 'Maximillian!!')}>Switch Name</button>
           {
-              this.state.showPersons ?
+              this.state.showPersons === true ?
               <div>
               <Person
                   name={personsState.persons[0].name}
