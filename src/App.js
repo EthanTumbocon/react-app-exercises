@@ -45,7 +45,7 @@ const app = props => {
     }
 
 
-    // render () {
+    // render (); {
     //     const style = {
     //         backgroundColor: 'white',
     //         font: 'inherit',
@@ -53,34 +53,40 @@ const app = props => {
     //         padding: '8px',
     //         cursor: 'pointer'
     //     };
-    // }
+
+        let persons = null;
+        if(this.state.showPersons) {
+            const persons = (
+                <div>
+                    <Person
+                        name={personsState.persons[0].name}
+                        age={personsState.persons[0].age}/>
+                    <Person
+                        name={personsState.persons[1].name}
+                        age={personsState.persons[1].age}
+                        click={switchNameHandler.bind(this, 'Max!')}
+                        changed={nameChangedHandler}>My Hobbies: Racing</Person>
+                    <Person
+                        name={personsState.persons[2].name}
+                        age={personsState.persons[2].age}/>
+                </div>
+            );
+        }
+            return(
+                <div className="App">
+                    <h1>Hi, I'm a react App</h1>
+                    <p>This is really working!</p>
+                    <button onClick={() => togglePersonsHandler}>Switch Name</button>
+                    {persons}
+                </div>
+            );
+            // return React.createElement('div', null, React.createElement('h1', {className: 'App'}, 'Does this work now?'))
+        };
 
 
-      return(
-      <div className="App">
-          <h1>Hi, I'm a react App</h1>
-          <p>This is really working!</p>
-          <button onClick={() => switchNameHandler.bind(this, 'Maximillian!!')}>Switch Name</button>
-          {
-              this.state.showPersons === true ?
-              <div>
-              <Person
-                  name={personsState.persons[0].name}
-                  age={personsState.persons[0].age}  />
-              <Person
-                  name={personsState.persons[1].name}
-                  age={personsState.persons[1].age}
-                  click={switchNameHandler.bind(this, 'Max!')}
-                  changed={nameChangedHandler} >My Hobbies: Racing</Person>
-              <Person
-                  name={personsState.persons[2].name}
-                  age={personsState.persons[2].age}/>
-          </div> : null
-          }
-      </div>
-      );
-      // return React.createElement('div', null, React.createElement('h1', {className: 'App'}, 'Does this work now?'))
-  }
+
+
+
 
 export default app;
 
