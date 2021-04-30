@@ -17,17 +17,17 @@ const app = props => {
 
     console.log(personsState);
 
-    const switchNameHandler = (newName) => {
-        // console.log('Was clicked');
-        // this.state.persons[0].name = "Maximillian"; DO NOT USE THIS
-        setPersonsState({
-            persons: [
-                { name: 'Max', age: 28 },
-                { name: 'Manu', age: 29 },
-                { name: 'Stephanie', age: 26 }
-            ]
-        })
-    }
+    // const switchNameHandler = (newName) => {
+    //     // console.log('Was clicked');
+    //     // this.state.persons[0].name = "Maximillian"; DO NOT USE THIS
+    //     setPersonsState({
+    //         persons: [
+    //             { name: 'Max', age: 28 },
+    //             { name: 'Manu', age: 29 },
+    //             { name: 'Stephanie', age: 26 }
+    //         ]
+    //     })
+    // }
 
      const nameChangedHandler = (event) => {
         this.setState( {
@@ -38,6 +38,14 @@ const app = props => {
             ]
         } )
     }
+
+    const deletePersonHandler = (personIndex) => {
+         const persons = this.state.persons;
+         persons.splice(personIndex,1);
+         this.setState({persons:persons})
+    }
+
+
     const togglePersonsHandler = () =>{
         const doesShow = this.state.showPersons;
         this.setState({showPersons: !doesShow});
@@ -58,8 +66,9 @@ const app = props => {
         if(this.state.showPersons) {
             const persons = (
                 <div>
-                    {this.state.persons.map(person => {
+                    {this.state.persons.map((person,index) => {
                         return<Person
+                            click={deletePersonHandler(index)}
                         name={person.name}
                         age={person.age} />
                     })}
@@ -69,7 +78,7 @@ const app = props => {
                     <Person
                         name={personsState.persons[1].name}
                         age={personsState.persons[1].age}
-                        click={switchNameHandler.bind(this, 'Max!')}
+                        // click={switchNameHandler.bind(this, 'Max!')}
                         changed={nameChangedHandler}>My Hobbies: Racing</Person>
                     <Person
                         name={personsState.persons[2].name}
