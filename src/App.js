@@ -83,6 +83,14 @@ const app = props => {
                     <Person
                         name={personsState.persons[2].name}
                         age={personsState.persons[2].age}/>
+                    <Person
+                        name={personsState.persons[1].name}
+                        age={personsState.persons[1].age}
+                        // click={switchNameHandler.bind(this, 'Max!')}
+                        changed={nameChangedHandler}>My Hobbies: Racing</Person>
+                    <Person
+                        name={personsState.persons[2].name}
+                        age={personsState.persons[2].age}/>
                 </div>
             );
         }
