@@ -101,6 +101,12 @@ const app = props => {
                     <button onClick={() => togglePersonsHandler}>Switch Name</button>
                     {persons}
                 </div>
+    <div className="App">
+        <h1>Hi, I'm a react App</h1>
+        <p>This is really working!</p>
+        <button onClick={() => togglePersonsHandler}>Switch Name</button>
+        {persons}
+    </div>
             );
             // return React.createElement('div', null, React.createElement('h1', {className: 'App'}, 'Does this work now?'))
         };
