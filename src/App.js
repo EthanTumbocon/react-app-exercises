@@ -49,6 +49,10 @@ const app = props => {
     const togglePersonsHandler = () =>{
         const doesShow = this.state.showPersons;
         this.setState({showPersons: !doesShow});
+        const doesShow = this.state.showPersons;
+        this.setState({showPersons: !doesShow});
+        const doesShow = this.state.showPersons;
+        this.setState({showPersons: !doesShow});
 
     }
 
@@ -60,6 +64,7 @@ const app = props => {
             border: '1px solid blue',
             padding: '8px',
             cursor: 'pointer'
+
         };
 
         let persons = null;
