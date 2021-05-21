@@ -17,17 +17,17 @@ const app = props => {
 
     console.log(personsState);
 
-    // const switchNameHandler = (newName) => {
-    //     // console.log('Was clicked');
-    //     // this.state.persons[0].name = "Maximillian"; DO NOT USE THIS
-    //     setPersonsState({
-    //         persons: [
-    //             { name: 'Max', age: 28 },
-    //             { name: 'Manu', age: 29 },
-    //             { name: 'Stephanie', age: 26 }
-    //         ]
-    //     })
-    // }
+    const switchNameHandler = (newName) => {
+        // console.log('Was clicked');
+        // this.state.persons[0].name = "Maximillian"; DO NOT USE THIS
+        setPersonsState({
+            persons: [
+                { name: 'Max', age: 28 },
+                { name: 'Manu', age: 29 },
+                { name: 'Stephanie', age: 26 }
+            ]
+        })
+    }
 
      const nameChangedHandler = (event) => {
         this.setState( {
@@ -49,11 +49,6 @@ const app = props => {
     const togglePersonsHandler = () =>{
         const doesShow = this.state.showPersons;
         this.setState({showPersons: !doesShow});
-        const doesShow = this.state.showPersons;
-        this.setState({showPersons: !doesShow});
-        const doesShow = this.state.showPersons;
-        this.setState({showPersons: !doesShow});
-
     }
 
 
