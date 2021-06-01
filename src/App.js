@@ -38,6 +38,18 @@ const app = props => {
             ]
         } )
     }
+    const occupationChangedHandler = (event) => {
+        this.setState( {
+            occupation: [
+                {occupation: 'software developer'},
+                {occupation: 'EMT'},
+                {occupation: 'Food service worker'},
+
+            ]
+        })
+    }
+
+}
 
     const deletePersonHandler = (personIndex) => {
          const persons = this.state.persons.slice();
