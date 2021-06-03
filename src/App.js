@@ -48,6 +48,16 @@ const app = props => {
             ]
         })
     }
+    const occupationChangedHandler = (event) => {
+        this.setState( {
+            occupation: [
+                {occupation: 'software developer'},
+                {occupation: 'EMT'},
+                {occupation: 'Food service worker'},
+
+            ]
+        })
+    }
 
 }
 
